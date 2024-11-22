@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Calendar - Admin</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/reynaldoslogo.png">
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/calendar.css">
+</head>
+
+<body id="page-top">
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: rgb(0,0,0);max-width: none;width: 120px;">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#" style="background: url('assets/img/reynaldoslogo.png') no-repeat;background-size: contain;border-radius: 40px;width: 120px;height: 120px;">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" id="dashboard-item">
+                        <a class="nav-link" href="admindashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" id="calendar-item">
+                        <a class="nav-link active" href="calendar.html">
+                            <i class="fa fa-calendar"></i>
+                            <span>Calendar</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#appointmentDropdown" aria-expanded="false" aria-controls="appointmentDropdown">
+                        <i class="fas fa-table"></i>
+                        <span>Appointments</span>
+                    </a>                    
+                      <div id="appointmentDropdown" class="collapse" aria-labelledby="headingAppointment" data-bs-parent="#accordionSidebar">
+                          <div class="bg-white py-2 collapse-inner rounded">
+                              <a class="collapse-item" href="/display/appointment">Pending Requests</a>
+                              <a class="collapse-item" href="/display/approved">Approved Requests</a>
+                              <a class="collapse-item" href="/display/archives">Archives</a>
+                          </div>
+                      </div>
+                  </li>
+                  
+              
+                        
+                    <li class="nav-item" id="profile-item">
+                        <a class="nav-link" href="profile.html">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#cmsDropdown" aria-expanded="false" aria-controls="cmsDropdown">
+                            <i class="fas fa-book"></i>
+                            <span>CMS</span>
+                        </a>
+                        <div id="cmsDropdown" class="collapse" aria-labelledby="headingAppointment" data-bs-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner">
+                                <a class="collapse-item" href="/display/gallery">Gallery</a>
+                                <a class="collapse-item" href="/display/servicemanagement">Service Management</a>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+                <div class="text-center d-none d-md-inline">
+                    <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+                </div>
+            </div>
+        </nav>
+
+        
+        <div class="container">
+            <div class="left">
+              <div class="calendar">
+                <div class="month">
+                  <i class="fas fa-angle-left prev"></i>
+                  <div class="date">December 2015</div>
+                  <i class="fas fa-angle-right next"></i>
+                </div>
+                <div class="weekdays">
+                  <div>Sun</div>
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div>Sat</div>
+                </div>
+                <div class="days"></div>
+                <div class="goto-today">
+                  <div class="goto">
+                    <input type="text" placeholder="mm/yyyy" class="date-input" />
+                    <button class="goto-btn">Go</button>
+                  </div>
+                  <button class="today-btn">Today</button>
+                </div>
+              </div>
+            </div>
+            <div class="right">
+              <div class="today-date">
+                <div class="event-day">Wed</div>
+                <div class="event-date">12th December 2022</div>
+                <div class="event-count"></div>
+              </div>
+              <div class="events"></div>
+              <div class="add-event-wrapper">
+                <div class="add-event-header">
+                  <div class="title">Add Event</div>
+                  <i class="fas fa-times close"></i>
+                </div>
+                <div class="add-event-body">
+                  <div class="add-event-input">
+                    <input type="text" placeholder="Event Name" class="event-name" />
+                  </div>
+                  <div class="add-event-input">
+                    <input type="date" placeholder="Start Date" class="event-start-date" />
+                  </div>
+                  <div class="add-event-input">
+                    <input type="time" placeholder="Event Time From" class="event-time-from" />
+                  </div>
+                  <div class="add-event-input">
+                    <input type="date" placeholder="End Date" class="event-end-date" />
+                  </div>
+                  <div class="add-event-input">
+                    <input type="time" placeholder="Event Time To" class="event-time-to" />
+                  </div>
+                </div>
+                <div class="add-event-footer">
+                  <button class="add-event-btn">Add Event</button>
+                </div>
+              </div>
+            </div>
+            <button class="add-event">
+              <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    <script src="assets/js/calendar.js"></script>       
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/chart.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+    <script src="assets/js/theme.js"></script>    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../admin/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+
+  
+</body>
+</html>
